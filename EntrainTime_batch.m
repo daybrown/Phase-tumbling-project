@@ -75,6 +75,7 @@ Etime_cd.mesh = {xx,yy};
 % Etime_cd.coupling = 'bidirectional';\
 
 %% Plot three types of entrain time 
+load('Etime_cd_20230805.mat');
 figure;
 fig = tiledlayout(4,3);
 xx = Etime_cd.mesh{1};

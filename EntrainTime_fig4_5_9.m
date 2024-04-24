@@ -74,7 +74,7 @@ Etime_cd.mesh = {xx,yy};
 % state about coupling style.
 % Etime_cd.coupling = 'bidirectional';\
 
-%% Plot three types of entrain time 
+%% Plot three types of entrain time, figure 4 of the paper.-----------------------
 
 % to see result directly, uncomment the next line.
 % load('Etime_cd_20230805.mat');
@@ -129,7 +129,9 @@ cbh.Layout.Tile = 'east';
 
 fig.TileSpacing = 'compact';
 fig.Padding = 'compact';
+
 %% map and heat map for last figure;
+
 T_all = Etime_cd.data;
 par_unroll = Etime_cd.pars;
 xx = Etime_cd.mesh{1};
@@ -148,7 +150,10 @@ cbh = colorbar ; %Create Colorbar
 cbh.Ticks = linspace(0, 408, 18);
 cbh.TickLabels = num2cell(0:1:17);
 % hold on
-%% New figure for casey
+
+
+%% The figure 9.----------------------------------------------------------------
+
 c_Pi_b = zeros(size(Pi_entrain));
 c_Pi_s = zeros(size(Pi_entrain));
 c_Pi = zeros(size(Pi_entrain));
@@ -162,7 +167,6 @@ c_s = sum(c_Pi == 1);
 
 figure;
 fig = tiledlayout(2,2);
-
 Pi_entrain_rep = repmat(Pi_entrain(12,:), length(Pi_entrain),1);
 Pi_entrain_diff = Pi_entrain - Pi_entrain_rep;
 nexttile()
@@ -182,7 +186,6 @@ xlim([0 24]);   ylim([0 24]);
 xticks(0:4:24);    yticks(0:4:24);
 xlabel("LD");    ylabel("O_2");
 
-% added by COD 11-29-23
 c_n = sum(c_Pi == 0);
 
 c_hurts = 100*(c_b/49);
@@ -209,7 +212,9 @@ T_all = Etime_cd.data;
 par_unroll = Etime_cd.pars;
 xx = Etime_cd.mesh{1};
 yy = Etime_cd.mesh{2};
-% Plot both entrain, try column 1
+
+
+% Plot both entrain time, use column 1 of T_all-----------------
 
 figure;
 fig1 = tiledlayout(2,2);
@@ -236,7 +241,7 @@ cbh.Layout.Tile = 'east';
 % figure;
 % plot(xspan,Pi_entrain(7,:)/24); % at O2 phase = 10.5
 
-%% Plot O1 entrain time, try column 2---------------------------
+%% Plot O1 entrain time, use column 2 of T_all---------------------------
 figure
 fig2 = tiledlayout(2,2);
 title_name = ["No coupling", "O_1 <= O_2", "O_1 => O_2", 'O_1 <=> O_2'];
@@ -258,7 +263,7 @@ cbh.Ticks = linspace(0, 408, 18);
 cbh.TickLabels = num2cell(0:1:17);
 cbh.Layout.Tile = 'east';
 
-%% Plot O2 entrain time, try column 3---------------------------
+%% Plot O2 entrain time, use column 3 of T_all---------------------------
 figure;
 fig3 = tiledlayout(2,2);
 title_name = ["No coupling", "O_1 <= O_2", "O_1 => O_2", 'O_1 <=> O_2'];
@@ -280,7 +285,7 @@ cbh.Ticks = linspace(0, 408, 18);
 cbh.TickLabels = num2cell(0:1:17);
 cbh.Layout.Tile = 'east';
 
-%% Box chart plot
+%% Box chart plot, alternative figure for figure 5.--------------------------------
 T_all = Etime_cd.data;
 Etime_all = [];
 Etime_O1 = [];

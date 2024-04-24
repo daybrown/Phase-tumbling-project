@@ -80,15 +80,8 @@ hold off;
 ylim([0 1]); ylabel('M');
 xlim([0 5]); xlabel('P');
 title('Forced limit cycles')
-%% Time courses
-figure;
-plot(0:dt:72,Y(end-480*3:end,:));
-legend('P1','M1','P2','M2','LD');
-title("Forced limit cycles");
-xlim([0 72])
-xlabel('T'); 
-% Y;
-%% schematic poincare sections
+
+%% schematic poincare sections. figure 3
 figure;
 tiledlayout(1,2);
 

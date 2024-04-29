@@ -77,7 +77,7 @@ Etime_cd.mesh = {xx,yy};
 %% Plot three types of entrain time, figure 4 of the paper.-----------------------
 
 % to see result directly, uncomment the next line.
-% load('Etime_cd_20230805.mat');
+% load('Etime_20230805.mat');
 
 figure;
 fig = tiledlayout(4,3);

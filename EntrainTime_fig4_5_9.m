@@ -130,7 +130,7 @@ cbh.Layout.Tile = 'east';
 fig.TileSpacing = 'compact';
 fig.Padding = 'compact';
 
-%% map and heat map for last figure;
+%% heat map for the figure 7a;
 
 T_all = Etime_cd.data;
 par_unroll = Etime_cd.pars;

@@ -16,7 +16,7 @@ c_b = sum(c_Pi == -1);
 c_s = sum(c_Pi == 1); 
 
 
-%% added by COD 11-29-23
+%%
 
 c_n = sum(c_Pi == 0);
 

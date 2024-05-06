@@ -67,27 +67,27 @@ T_all(end+1) = {[Pi_entrain Pi_entrain_O1 Pi_entrain_O2]};
 end
 toc;
 % For data saving-------------------------------
-Etime_cd = struct();
-Etime_cd.data = T_all;
-Etime_cd.pars = par_unroll;
-Etime_cd.mesh = {xx,yy};
+Etime_all = struct();
+Etime_all.data = T_all;
+Etime_all.pars = par_unroll;
+Etime_all.mesh = {xx,yy};
 % state about coupling style.
-% Etime_cd.coupling = 'bidirectional';\
+% Etime_all.coupling = 'bidirectional';\
 
 %% Plot three types of entrain time, figure 4 of the paper.-----------------------
 
 % to see result directly, uncomment the next line.
-% load('Etime_20230805.mat');
+% Etime_all = load("Etime_20230805.mat").Etime_cd;
 
 figure;
 fig = tiledlayout(4,3);
-xx = Etime_cd.mesh{1};
-yy = Etime_cd.mesh{2};
+xx = Etime_all.mesh{1};
+yy = Etime_all.mesh{2};
 orderfig = 'a':'l';
 ordercount = 0;
 fignow = 0;
 for j = 1:4
-    T_e = Etime_cd.data{j};
+    T_e = Etime_all.data{j};
 %     figure;
 %     fig = tiledlayout(1,3);
     big_title = ["uncoupled", "O_1 \leftarrow O_2", "O_1 \rightarrow O_2", "O_1 \leftrightarrow O_2"];
@@ -132,10 +132,10 @@ fig.Padding = 'compact';
 
 %% heat map for the figure 7a;
 
-T_all = Etime_cd.data;
-par_unroll = Etime_cd.pars;
-xx = Etime_cd.mesh{1};
-yy = Etime_cd.mesh{2};
+T_all = Etime_all.data;
+par_unroll = Etime_all.pars;
+xx = Etime_all.mesh{1};
+yy = Etime_all.mesh{2};
 figure;
 i = 4;
 Pi_entrain = reshape(T_all{i}(:,1),size(xx));
@@ -208,10 +208,10 @@ set(gca, 'XTickLabel', [0:8:49]/2)
 legend('beneficial','neutral','location','northwest')
 legend('boxoff')
 %% plots total etime
-T_all = Etime_cd.data;
-par_unroll = Etime_cd.pars;
-xx = Etime_cd.mesh{1};
-yy = Etime_cd.mesh{2};
+T_all = Etime_all.data;
+par_unroll = Etime_all.pars;
+xx = Etime_all.mesh{1};
+yy = Etime_all.mesh{2};
 
 
 % Plot both entrain time, use column 1 of T_all-----------------
@@ -286,7 +286,7 @@ cbh.TickLabels = num2cell(0:1:17);
 cbh.Layout.Tile = 'east';
 
 %% Box chart plot, alternative figure for figure 5.--------------------------------
-T_all = Etime_cd.data;
+T_all = Etime_all.data;
 Etime_all = [];
 Etime_O1 = [];
 Etime_O2 = [];

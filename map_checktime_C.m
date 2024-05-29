@@ -8,7 +8,7 @@ opt1 = odeset('AbsTol',1e-10,'RelTol',1e-10,'Events',@(t,y) section(t,y,sec_loc)
 
 %     x0(sec_loc1(1)) = modi(x0(sec_loc1(1)),dir);  
 
-tol1 = 0.1;  
+tol1 = 0.2;  
 % tol2 = 0.05;
 % Imax = 50;
 t_entrain = 0;
@@ -24,19 +24,26 @@ dte_O2 = diff(te_O2);
 dte_O1(abs(dte_O1)<1e-3) = [];
 dte_O2(abs(dte_O2)<1e-3) = [];
 
+% add the first return to the array
+dte_O1 = [te_O1(1); dte_O1];
+dte_O2 = [te_O2(1); dte_O2];
+% ------------------------------------
+
 idx_O1 = find(abs(dte_O1 - 24) < tol1);
 idx_O2 = find(abs(dte_O2 - 24) < tol1);
 
 for i = 1:length(idx_O1)
     if all(abs(dte_O1(idx_O1(i):end) - 24) < tol1)
-      t_entrain_O1 = te_O1(idx_O1(i)+1);
+%       t_entrain_O1 = te_O1(idx_O1(i)+1);
+      t_entrain_O1 = te_O1(idx_O1(i));
       break;
     end
 end
 
 for i = 1:length(idx_O2)
     if all(abs(dte_O2(idx_O2(i):end) - 24) < tol1)
-      t_entrain_O2 = te_O2(idx_O2(i)+1);
+%       t_entrain_O2 = te_O2(idx_O2(i)+1);
+      t_entrain_O2 = te_O2(idx_O2(i));
       break;
     end
 end

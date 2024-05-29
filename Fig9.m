@@ -43,7 +43,7 @@ figure(13)
 b=bar(sub_y','stacked','FaceColor','flat');
 b(1).CData = [62 150 81]/255;
 b(2).CData = [.8 .8 .8];
-set(gca, 'XTick', [0:8:49],'YTick',0:25:100)
+set(gca, 'XTick', [1:8:50],'YTick',0:25:100)
 set(gca, 'XTickLabel', [0:8:49]/2)
 ylabel('% of initial O_2 phases')
 xlabel('LD phase')

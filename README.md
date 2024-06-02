@@ -11,6 +11,6 @@ To determine the reentrainment time of the fully coupled two oscillators model i
 
 4. Returning the maximum reentrainment time among O1 and O2, which is the total entrainment time of the system.
 
-The code file \verb|map_checktime_C.m| does the calculation and returns three kinds of reentrain time \verb|t_entrain|, \verb|t_entrain_O1|, \verb|t_entrain_O2|
+The code file map_checktime_C.m does the calculation and returns three kinds of reentrain time t_entrain, t_entrain_O1, t_entrain_O2
 
-Code \verb|Fig7b.m| iteratively applying the 2D mapping function \verb|map2D_general_phase.m| to trace the trajectory of initial conditions over multiple iterations. The purpose is to visualize how the 2D map evolves over time and understand its behavior in the phase space.
+Code Fig7b.m iteratively applying the 2D mapping function \verb|map2D_general_phase.m| to trace the trajectory of initial conditions over multiple iterations. The purpose is to visualize how the 2D map evolves over time and understand its behavior in the phase space.

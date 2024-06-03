@@ -14,3 +14,5 @@ To determine the reentrainment time of the fully coupled two oscillators model i
 The code file map_checktime_C.m does the calculation and returns three kinds of reentrain time t_entrain, t_entrain_O1, t_entrain_O2
 
 Code Fig7b.m iteratively applying the 2D mapping function \verb|map2D_general_phase.m| to trace the trajectory of initial conditions over multiple iterations. The purpose is to visualize how the 2D map evolves over time and understand its behavior in the phase space.
+
+The other codes are related to each figure in our paper.

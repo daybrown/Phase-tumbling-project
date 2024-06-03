@@ -15,4 +15,8 @@ The code file map_checktime_C.m does the calculation and returns three kinds of 
 
 Code Fig7b.m iteratively applying the 2D mapping function \verb|map2D_general_phase.m| to trace the trajectory of initial conditions over multiple iterations. The purpose is to visualize how the 2D map evolves over time and understand its behavior in the phase space.
 
+Code CNTmodel.m is the coupled NT system we used for simulation.
+
+Code map2D_general_phase.m defines the 2D map by the method in Liao et al., 2020
+
 The other codes are related to each figure in our paper.
